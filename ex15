@@ -1,0 +1,23 @@
+#Identifies the file you want to open
+puts "What is the name of the file you want to open?"
+#Allows you to enter the file you wish to run
+filename = gets.chomp
+
+#opens the file you have entered
+txt = open(filename)
+
+#Prints on the screen the message including the actual file name
+puts "Here's you file #{filename}:"
+
+#Prints the contents of the file in the program
+print txt.read
+
+#Prints a message asking you to enter the filename again
+print "type the filename again: "
+#Allows you user to enter the filename again to open
+file_again = $stdin.gets.chomp
+
+#Opens the contents of the file again.
+txt_again = open(file_again)
+#Prints the message contained in the file
+print txt_again.read
