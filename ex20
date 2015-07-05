@@ -1,0 +1,36 @@
+#allows you to identify the input file
+input_file = ARGV.first
+#prints the entire file
+def print_all(f)
+	puts f.read
+end
+#sets everything back to zero
+def rewind(f)
+	f.seek(0)
+end
+#allows you to enter what line and file you want to print from later in program
+def print_a_line(line_count, f)
+	puts "#{line_count}, #{f.gets.chomp}"
+end
+#sets the current file equal to input file
+current_file = open(input_file)
+
+puts "First let's print the whole file:\n"
+#prints the entire input file
+print_all(current_file)
+
+puts "Now let's rewind, kind of like a tape."
+#forgets you printed the file
+rewind(current_file)
+
+puts "Let's print three lines:"
+#individually prints each line of the file
+current_line = 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
+
+current_line = current_line + 1
+print_a_line(current_line, current_file)
+	
